@@ -133,37 +133,35 @@ function page3Animation() {
 }
 
 function footer(){
+    var tl4 = gsap.timeline({
+        scrollTrigger:{
+            trigger:"footer",
+            scroller:"body",
+            scrub:2,
+            start:"top 80%",
+            end:"top 30%",
+        }
+    })
     
+    tl4.from(".footer-part1 h1",{
+        x:-100,
+        opacity:0,
+    })
+    tl4.from(".footer-part1 p",{
+        x:-100,
+        opacity:0,
+    })
+    tl4.from(".footerlist p",{
+        x:-50,
+        opacity:0
+    })
+    tl4.from(".footerlist h4",{
+        x:-50,
+        opacity:0
+    })
 }
 page1Animation();
 page2Animation();
 page3Animation();
 footer();
 
-var tl4 = gsap.timeline({
-    scrollTrigger:{
-        trigger:"footer",
-        scroller:"body",
-        markers:true,
-        scrub:2,
-        start:"top 80%",
-        end:"top 30%",
-    }
-})
-
-tl4.from(".footer-part1 h1",{
-    x:-100,
-    opacity:0,
-})
-tl4.from(".footer-part1 p",{
-    x:-100,
-    opacity:0,
-})
-tl4.from(".footerlist p",{
-    x:-50,
-    opacity:0
-})
-tl4.from(".footerlist h4",{
-    x:-50,
-    opacity:0
-})

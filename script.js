@@ -87,6 +87,9 @@ function page2Animation() {
         opacity: 0
     }, "anim3")
 }
-
-page1Animation();
-page2Animation();
+function page3Animation() {
+    
+}
+//page1Animation();
+//page2Animation();
+page3Animation();

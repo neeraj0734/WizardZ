@@ -1,10 +1,10 @@
 function page1Animation() {
     var tl = gsap.timeline()
     var h1 = document.querySelector(".center-part1 h1")
-    console.log(h1Text)
+    
     var h1Text = h1.textContent
     var splittedText = h1Text.split(" ");
-    console.log(splittedText)
+    
 
     var clutter = ""
 
@@ -45,7 +45,6 @@ function page2Animation() {
             scrollTrigger: {
                 trigger: ".section2",
                 scroller: "body",
-                markers: true,
                 start: "top 80%",
                 end: "top 0%",
                 scrub: 1
@@ -93,3 +92,46 @@ function page3Animation() {
 page1Animation();
 page2Animation();
 page3Animation();
+
+var h1 = document.querySelector(".section3 .container-part1 h1")
+var h1Text = h1.textContent
+
+var clutter = ""
+
+var splittedText = h1Text.split(" ")
+
+splittedText.forEach((element)=>{
+    clutter += `<span>${element}</span> `
+    
+})
+h1.innerHTML = clutter
+
+var tl3 = gsap.timeline({
+    scrollTrigger:{
+        trigger:".section3 .container",
+        scroller:"body",
+        start:"top 80%",
+        end:"top 40%",
+        scrub:2,
+    }
+})
+tl3.from(".container-part1 h1 span",{
+    opacity: 0,
+    duration:1,
+    delay:1,
+    stagger:.2,
+},"anim")
+tl3.from(".section3 .container-part2 img",{
+    x: 100,
+    opacity:0,
+
+},"+=.5")
+tl3.from(".section3 .container-part1 p",{
+    x:-100,
+    opacity:0,
+})
+tl3.from(".section3 .container-part1 button",{
+    x:-100,
+    opacity:0,
+})
+

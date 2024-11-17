@@ -27,4 +27,11 @@ tl.from(".center-part1 h1 span, .center-part1 p, .center-part1 button, .center-p
     x:-10,
     duration: 1,
     stagger:.2
-}, "-=1" )
+}, "-=2" )
+
+tl.from(".sectionbottom img",{
+    y:30,
+    opacity:0,
+    duration:.6,
+    stagger: .2
+})
